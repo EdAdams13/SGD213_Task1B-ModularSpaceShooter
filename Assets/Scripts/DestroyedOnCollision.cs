@@ -30,6 +30,7 @@ public class DestroyedOnCollision : MonoBehaviour
         else
         {
             // Use default collision code
+            Destroy(gameObject);
         }
     }
 }
