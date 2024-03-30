@@ -4,28 +4,16 @@ using System.Collections;
 public class SpawnOverTimeScript : MonoBehaviour
 {
 
-    // Object to spawn
-    [SerializeField]
-    private GameObject spawnObject;
-
-    // Delay between spawns
-    [SerializeField]
-    private float spawnDelay = 2f;
+    [SerializeField] private GameObject spawnObject; // Object to spawn
+    [SerializeField] private float spawnDelay = 2f; // Delay between spawns
 
     private Renderer ourRenderer;
-
-    // Use this for initialization
-    void Start()
+    
+    void Start() // Use this for initialization
     {
-
         ourRenderer = GetComponent<Renderer>();
-
-        // Stop our Spawner from being visible!
-        ourRenderer.enabled = false;
-
-        // Call the given function after spawnDelay seconds, 
-        // and then repeatedly call it after spawnDelay seconds.
-        InvokeRepeating("Spawn", spawnDelay, spawnDelay);
+        ourRenderer.enabled = false; // Stop our Spawner from being visible!
+        InvokeRepeating("Spawn", spawnDelay, spawnDelay); // Calls said function after delay, then repeats forever
     }
 
     void Spawn()
@@ -33,10 +21,7 @@ public class SpawnOverTimeScript : MonoBehaviour
         float x1 = transform.position.x - ourRenderer.bounds.size.x / 2;
         float x2 = transform.position.x + ourRenderer.bounds.size.x / 2;
 
-        // Randomly pick a point within the spawn object
-        Vector2 spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y);
-
-        // Spawn the object at the 'spawnPoint' position
-        Instantiate(spawnObject, spawnPoint, Quaternion.identity);
+        Vector2 spawnPoint = new Vector2(Random.Range(x1, x2), transform.position.y); // Randomly pick a point within the spawn object
+        Instantiate(spawnObject, spawnPoint, Quaternion.identity); // Spawn the object at the 'spawnPoint' position
     }
 }
