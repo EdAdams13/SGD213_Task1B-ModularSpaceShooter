@@ -26,7 +26,7 @@ public class PlayerMovementScript : MonoBehaviour
         {
             Vector2 ForceToAdd=Vector2.right*HorizontalInput*playerAcceleration*Time.deltaTime;
             spaceshipRB.AddForce(ForceToAdd);
-            //print(HorizontalInput);
+            
         } 
     } 
 }
