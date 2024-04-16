@@ -24,13 +24,12 @@ public class DestroyedOnCollision : MonoBehaviour
        
         else if (tagListType == TagListType.Whitelist && !tagInList)
         {
-            Destroy(gameObject); // Destroy if it's a Whitelist and the tag is NOT in the Whitelist
+            
         }
     
         else
         {
-            // Use default collision code
-            Destroy(gameObject);
+
         }
     }
 }
