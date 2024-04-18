@@ -30,6 +30,16 @@ public class PlayerInput : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         weapon = GetComponent<WeaponBase>();
+
+        if(weapon == null)
+        {
+            Debug.LogWarning("Weapon is Null");
+        }
+        else 
+        {
+            return; 
+        }
+
     }
 
     void Update()
