@@ -47,6 +47,7 @@ public abstract class WeaponBase : MonoBehaviour
             // update the data of the new weapon with the data from this weapon
             bulletSpawnPoint = oldWeapon.BulletSpawnPoint;
             bullet = oldWeapon.Bullet;
+            Debug.LogWarning(oldWeapon);
         }
         else
         {

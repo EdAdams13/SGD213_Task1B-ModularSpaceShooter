@@ -66,6 +66,8 @@ public class PlayerInput : MonoBehaviour
                 // tell shootingScript to shoot
                 weapon.Shoot();
             }
+
+            print("Shoot:" + weapon);
         }
     }
 
